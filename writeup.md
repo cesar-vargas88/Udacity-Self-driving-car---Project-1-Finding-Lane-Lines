@@ -28,7 +28,7 @@ The goals / steps of this project are the following:
 
 ### Reflection
 
-### 1. Describe your pipeline. As part of the description, explain how you modified the draw_lines() function.
+### 1. Pipeline description
 
 My pipeline consisted of next steps:
 
@@ -64,7 +64,7 @@ My pipeline consisted of next steps:
 
 ![alt text][weighted]
 
-In order to draw a single line on the left and right lanes, I modified the draw_lines() function by ...
+### Procedure for extracting the lane ines
 
 * Get the midpoint of all lines detected
 * Determines whether the midpoint is loaded on the right or left side of the image and classifies it
@@ -72,16 +72,10 @@ In order to draw a single line on the left and right lanes, I modified the draw_
 * Define the x1, y1 and x2, y2 points to draw the left and right line to cover the region of interest    x = (y - b) / m 
 * Draw the left and right lane lines
 
-### 2. Identify potential shortcomings with your current pipeline
+### 2. Potential shortcomings
 
+One potential shortcoming would be what would happen when are shades in the road or too much light
 
-One potential shortcoming would be what would happen when ... 
+### 3. Possible improvements to pipeline
 
-Another shortcoming could be ...
-
-
-### 3. Suggest possible improvements to your pipeline
-
-A possible improvement would be to ...
-
-Another potential improvement could be to ...
+A possible improvement would be to detect lane lines by color in order to have some redundancy
