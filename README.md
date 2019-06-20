@@ -14,23 +14,79 @@ To complete the project, two files will be submitted: a file containing project 
 
 To meet specifications in the project, take a look at the requirements in the [project rubric](https://review.udacity.com/#!/rubrics/322/view)
 
+# **Finding Lane Lines on the Road** 
 
-Creating a Great Writeup
+The goals / steps of this project are the following:
+* Make a pipeline that finds lane lines on the road
+* Reflect on your work in a written report
+
+
+[//]: # (Image References)
+
+[source]: ./examples/source.jpg "source"
+[interest_region]: ./examples/interest_region.jpg 
+[gray]: ./examples/gray.jpg 
+[blur]: ./examples/blur.jpg 
+[edge]: ./examples/edge.jpg 
+[masked_edge]: ./examples/masked_edge.jpg 
+[lines]: ./examples/lines.jpg 
+[weighted]: ./examples/weighted.jpg 
+
 ---
-For this project, a great writeup should provide a detailed response to the "Reflection" section of the [project rubric](https://review.udacity.com/#!/rubrics/322/view). There are three parts to the reflection:
 
-1. Describe the pipeline
+### Reflection
 
-2. Identify any shortcomings
+### 1. Pipeline description
 
-3. Suggest possible improvements
+My pipeline consisted of next steps:
 
-We encourage using images in your writeup to demonstrate how your pipeline works.  
+* Load image
 
-All that said, please be concise!  We're not looking for you to write a book here: just a brief description.
+![alt text][source]
 
-You're not required to use markdown for your writeup.  If you use another method please just submit a pdf of your writeup. Here is a link to a [writeup template file](https://github.com/udacity/CarND-LaneLines-P1/blob/master/writeup_template.md). 
+* Define region_of_interest image
 
+![alt text][interest_region]
+
+* Convert source image to grayscale
+
+![alt text][gray]
+
+* Apply gaussian blur to a grayscale image
+
+![alt text][blur]
+
+* Apply canny edge detection to gaussian blur image
+
+![alt text][edge]
+
+* Mask canny edge detection and region_of_interest image
+
+![alt text][masked_edge]
+
+* Use hough_lines to find all the lines and draw a single left and right lanes
+
+![alt text][lines]
+
+* Weighted lane_detection and source images
+
+![alt text][weighted]
+
+### Procedure for extracting the lane ines
+
+* Get the midpoint of all lines detected
+* Determines whether the midpoint is loaded on the right or left side of the image and classifies it
+* Use a simple linear regression to get m and b parameters the midpoint of left and right lines detected
+* Define the x1, y1 and x2, y2 points to draw the left and right line to cover the region of interest    x = (y - b) / m 
+* Draw the left and right lane lines
+
+### 2. Potential shortcomings
+
+One potential shortcoming would be what would happen when are shades in the road or too much light
+
+### 3. Possible improvements to pipeline
+
+A possible improvement would be to detect lane lines by color in order to have some redundancy
 
 The Project
 ---
@@ -50,7 +106,3 @@ Jupyter is an Ipython notebook where you can run blocks of code and see results 
 A browser window will appear showing the contents of the current directory.  Click on the file called "P1.ipynb".  Another browser window will appear displaying the notebook.  Follow the instructions in the notebook to complete the project.  
 
 **Step 3:** Complete the project and submit both the Ipython notebook and the project writeup
-
-## How to write a README
-A well written README file can enhance your project and portfolio.  Develop your abilities to create professional README files by completing [this free course](https://www.udacity.com/course/writing-readmes--ud777).
-
