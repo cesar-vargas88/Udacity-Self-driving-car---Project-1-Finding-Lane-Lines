@@ -15,16 +15,14 @@ The goals / steps of this project are the following:
 
 [//]: # (Image References)
 
-[image1]: ./examples/grayscale.jpg "Grayscale"
-
-[source]: ./examples/grayscale.jpg "Grayscale"
-[interest_region]: ./examples/grayscale.jpg "Grayscale"
-[gray]: ./examples/grayscale.jpg "Grayscale"
-[blur]: ./examples/grayscale.jpg "Grayscale"
-[edges]: ./examples/grayscale.jpg "Grayscale"
-[edge_mask]: ./examples/grayscale.jpg "Grayscale"
-[lines]: ./examples/grayscale.jpg "Grayscale"
-[weighted]: ./examples/grayscale.jpg "Grayscale"
+[source]: ./examples/source.jpg "source"
+[interest_region]: ./examples/interest_region.jpg 
+[gray]: ./examples/gray.jpg 
+[blur]: ./examples/blur.jpg 
+[edge]: ./examples/edge.jpg 
+[masked_edge]: ./examples/masked_edge.jpg 
+[lines]: ./examples/lines.jpg 
+[weighted]: ./examples/weighted.jpg 
 
 ---
 
@@ -52,11 +50,11 @@ My pipeline consisted of next steps:
 
 * Apply canny edge detection to gaussian blur image
 
-![alt text][edges]
+![alt text][edge]
 
 * Mask canny edge detection and region_of_interest image
 
-![alt text][edge_mask]
+![alt text][masked_edge]
 
 * Use hough_lines to find all the lines and draw a single left and right lanes
 
